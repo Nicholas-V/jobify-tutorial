@@ -15,7 +15,7 @@ const links: NavLink[] = [
     },
     {
         href: "/jobs",
-        label: "jobs",
+        label: "all jobs",
         icon: <AppWindow/>
     },
     {
