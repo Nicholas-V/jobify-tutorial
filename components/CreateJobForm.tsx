@@ -39,7 +39,7 @@ function CreateJobForm() {
         onSuccess: (data) => {
             if (!data) {
                 toast({
-                    description: 'there was an error',
+                    description: "There was an error creating job.",
                 });
                 return;
             }
@@ -48,7 +48,7 @@ function CreateJobForm() {
             queryClient.invalidateQueries({ queryKey: ['stats'] });
             queryClient.invalidateQueries({ queryKey: ['charts'] });
 
-            router.push('/jobs');
+            router.push("/jobs");
             // form.reset();
         },
     });
@@ -62,34 +62,34 @@ function CreateJobForm() {
                 className='bg-muted p-8 rounded'
                 onSubmit={form.handleSubmit(onSubmit)}
             >
-                <h2 className='capitalize font-semibold text-4xl mb-6'>add job</h2>
-                <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start'>
+                <h2 className="capitalize font-semibold text-4xl mb-6">add job</h2>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
                     {/* position */}
-                    <CustomFormField name='position' control={form.control} />
+                    <CustomFormField name="position" control={form.control} />
                     {/* company */}
-                    <CustomFormField name='company' control={form.control} />
+                    <CustomFormField name="company" control={form.control} />
                     {/* location */}
-                    <CustomFormField name='location' control={form.control} />
+                    <CustomFormField name="location" control={form.control} />
                     {/* job status */}
                     <CustomFormSelect
-                        name='status'
+                        name="status"
                         control={form.control}
-                        labelText='job status'
+                        labelText="job status"
                         items={Object.values(JobStatus)}
                     />
                     {/* job  type */}
                     <CustomFormSelect
-                        name='mode'
+                        name="mode"
                         control={form.control}
-                        labelText='job mode'
+                        labelText="job mode"
                         items={Object.values(JobMode)}
                     />
                     <Button
-                        type='submit'
-                        className='self-end capitalize'
+                        type="submit"
+                        className="self-end capitalize"
                         disabled={isPending}
                     >
-                        {isPending ? 'loading...' : 'create job'}
+                        {isPending ? "loading..." : "create job"}
                     </Button>
                 </div>
             </form>
