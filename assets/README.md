@@ -1513,13 +1513,13 @@ export async function getAllJobsAction({
 
 ## Challenge - Jobs Page
 
-- create SearchForm, JobsList, JobCard, JobInfo, DeleteJobBtn components
+- create SearchForm, JobsList, JobCard, JobInfo, DeleteJobButton components
 - setup jobs/loading.tsx
 - wrap jobs/page in React Query and pre-fetch getAllJobsAction
 
 ## Jobs Page
 
-- create SearchForm, JobsList, JobCard, JobInfo, DeleteJobBtn
+- create SearchForm, JobsList, JobCard, JobInfo, DeleteJobButton
 - setup jobs/loading.tsx
 
 ```tsx
@@ -1958,14 +1958,14 @@ export async function deleteJobAction(id: string): Promise<JobType | null> {
    - Import the `useMutation` and `useQueryClient` hooks from `@tanstack/react-query`.
    - Import the `deleteJobAction` function from your actions file.
 
-2. **Define the DeleteJobBtn component**
+2. **Define the DeleteJobButton component**
 
-   - Define a function component named `DeleteJobBtn` that takes an object as a prop.
+   - Define a function component named `DeleteJobButton` that takes an object as a prop.
    - This object should have an `id` property of type string.
 
 3. **Use hooks to get necessary data and functions**
 
-   - Inside `DeleteJobBtn`, use the `useToast` hook to get the `toast` function.
+   - Inside `DeleteJobButton`, use the `useToast` hook to get the `toast` function.
    - Use the `useQueryClient` hook to get the `queryClient` object.
    - Use the `useMutation` hook to get the `mutate` function and `isPending` state.
    - Pass an object to the `useMutation` hook with `mutationFn` and `onSuccess` properties.
@@ -1978,8 +1978,8 @@ export async function deleteJobAction(id: string): Promise<JobType | null> {
    - Pass the `mutate` function as the `onClick` prop to the `Button` component.
    - Pass `isPending` as the `loading` prop to the `Button` component.
 
-5. **Export the DeleteJobBtn component**
-   - After defining the `DeleteJobBtn` component, export it so it can be used in other parts of your application.
+5. **Export the DeleteJobButton component**
+   - After defining the `DeleteJobButton` component, export it so it can be used in other parts of your application.
 
 ## DeleteJobButton
 
@@ -1991,7 +1991,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { deleteJobAction } from '@/utils/actions';
 import { useToast } from '@/components/ui/use-toast';
 
-function DeleteJobBtn({ id }: { id: string }) {
+function DeleteJobButton({ id }: { id: string }) {
   const { toast } = useToast();
   const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
@@ -2022,7 +2022,7 @@ function DeleteJobBtn({ id }: { id: string }) {
     </Button>
   );
 }
-export default DeleteJobBtn;
+export default DeleteJobButton;
 ```
 
 ## Challenge - GetSingleJobAction
