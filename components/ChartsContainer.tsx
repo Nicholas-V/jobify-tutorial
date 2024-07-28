@@ -11,7 +11,6 @@ import {
 
 import { useQuery } from '@tanstack/react-query';
 import { getChartsDataAction } from '@/utils/actions';
-
 function ChartsContainer() {
     const { data, isPending } = useQuery({
         queryKey: ['charts'],
