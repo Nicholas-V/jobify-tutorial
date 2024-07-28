@@ -31,5 +31,3 @@ export async function createJobAction(values: CreateAndEditJobType): Promise<Job
         return null;
     }
 }
-
-export default createJobAction;
